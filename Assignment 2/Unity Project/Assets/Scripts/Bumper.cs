@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bumper : MonoBehaviour
 {
     // Adjust this force value to control the strength of the push
-    public float m_fForceModifier = 10f;
+    public float m_fForceModifier = 30f;
 
     private void OnCollisionEnter(Collision collision)
     {

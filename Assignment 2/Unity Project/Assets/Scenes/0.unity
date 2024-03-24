@@ -664,7 +664,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6115e0b32d2608f458c1b288d362e0fe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3187,7 +3187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fa85a0cd752a0d4bbf9c377670fd6e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 7705685672892145550, guid: 7c007576c536be34e99b8bbf116232a4, type: 3}
+  ball: {fileID: 5957438591725689028, guid: 7102603b06c338041829c53a88d93a90, type: 3}
   startButton: {fileID: 857320996}
   highScoreText: {fileID: 1176890280}
   scoreText: {fileID: 714104320}
@@ -4577,7 +4577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1598d5a7c594e5c4ea4e54663a180f7e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.59
+      value: 3.53
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1598d5a7c594e5c4ea4e54663a180f7e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4585,7 +4585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1598d5a7c594e5c4ea4e54663a180f7e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 27.277
+      value: 27.28
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1598d5a7c594e5c4ea4e54663a180f7e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4622,6 +4622,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1598d5a7c594e5c4ea4e54663a180f7e, type: 3}
       propertyPath: m_Name
       value: RoundCorner
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1598d5a7c594e5c4ea4e54663a180f7e, type: 3}
+      propertyPath: m_TagString
+      value: Point
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1598d5a7c594e5c4ea4e54663a180f7e, type: 3}

@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour
 
     int score, highScore;
 
-    [SerializeField]
-    Rigidbody2D left, right;
+    //[SerializeField]
+    //Rigidbody2D left, right;
 
     [SerializeField]
     Vector3 startPos;
@@ -41,27 +41,27 @@ public class GameManager : MonoBehaviour
         canPlay = false;
     }
 
-    private void Update()
-    {
-        if (!canPlay) return;
-        if (Input.GetKey(KeyCode.A))
-        {
-            left.AddTorque(25f);
-        }
-        else
-        {
-            left.AddTorque(-20f);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            right.AddTorque(-25f);
-        }
-        else
-        {
-            right.AddTorque(20f);
-        }
+    //private void Update()
+    //{
+    //    if (!canPlay) return;
+    //    if (Input.GetKey(KeyCode.A))
+    //    {
+    //        left.AddTorque(25f);
+    //    }
+    //    else
+    //    {
+    //        left.AddTorque(-20f);
+    //    }
+    //    if (Input.GetKey(KeyCode.D))
+    //    {
+    //        right.AddTorque(-25f);
+    //    }
+    //    else
+    //    {
+    //        right.AddTorque(20f);
+    //    }
 
-    }
+    //}
 
     public void UpdateScore(int point, int mullIncrease)
     {

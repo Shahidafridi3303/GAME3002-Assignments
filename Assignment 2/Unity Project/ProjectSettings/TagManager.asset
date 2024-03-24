@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ball
+  - Dead
+  - Point
+  - Side
+  - Bouncer
+  - Flipper
   layers:
   - Default
   - TransparentFX

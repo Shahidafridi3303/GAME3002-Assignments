@@ -1,21 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bumper : MonoBehaviour
 {
-    // Adjust this force value to control the strength of the push
-    public float m_fForceModifier = 30f;
+    public float torqueMagnitude = 500f; // Adjust this value to control the torque applied to the ball
+    public float forceMagnitude = 10f;   // Adjust this value to control the force applied to the ball
 
     private void OnCollisionEnter(Collision collision)
     {
-        // Check if the colliding object is the ball
-        if (collision.gameObject.tag == "Ball")
+        if (collision.gameObject.CompareTag("Ball"))
         {
-            float force = -collision.gameObject.GetComponent<Rigidbody>().angularVelocity.magnitude * m_fForceModifier;
-            Vector3 contactPosition = collision.GetContact(0).point;
-            Vector3 direction = collision.gameObject.transform.position - contactPosition;
-            collision.gameObject.GetComponent<Rigidbody>().AddForceAtPosition(direction * force, contactPosition, ForceMode.Impulse);
+            Rigidbody ballRigidbody = collision.gameObject.GetComponent<Rigidbody>();
+            if (ballRigidbody != null)
+            {
+                Vector3 direction = collision.contacts[0].point - transform.position;
+
+                // Apply torque to the ball
+                ballRigidbody.AddTorque(Vector3.Cross(direction, Vector3.up) * torqueMagnitude, ForceMode.Impulse);
+
+                // Apply force to the ball in the direction away from the bumper
+                ballRigidbody.AddForce(direction.normalized * forceMagnitude, ForceMode.Impulse);
+            }
         }
     }
 }

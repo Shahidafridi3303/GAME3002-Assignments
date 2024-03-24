@@ -2686,63 +2686,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.53
   m_Center: {x: 8.6613e-10, y: 0.2325, z: 0}
---- !u!1001 &1404737201
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7705685672892145539, guid: 7c007576c536be34e99b8bbf116232a4, type: 3}
-      propertyPath: m_RootOrder
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 7705685672892145539, guid: 7c007576c536be34e99b8bbf116232a4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 7705685672892145539, guid: 7c007576c536be34e99b8bbf116232a4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.96
-      objectReference: {fileID: 0}
-    - target: {fileID: 7705685672892145539, guid: 7c007576c536be34e99b8bbf116232a4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 16.94
-      objectReference: {fileID: 0}
-    - target: {fileID: 7705685672892145539, guid: 7c007576c536be34e99b8bbf116232a4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9567004
-      objectReference: {fileID: 0}
-    - target: {fileID: 7705685672892145539, guid: 7c007576c536be34e99b8bbf116232a4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.29107463
-      objectReference: {fileID: 0}
-    - target: {fileID: 7705685672892145539, guid: 7c007576c536be34e99b8bbf116232a4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7705685672892145539, guid: 7c007576c536be34e99b8bbf116232a4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7705685672892145539, guid: 7c007576c536be34e99b8bbf116232a4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 33.845
-      objectReference: {fileID: 0}
-    - target: {fileID: 7705685672892145539, guid: 7c007576c536be34e99b8bbf116232a4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7705685672892145539, guid: 7c007576c536be34e99b8bbf116232a4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7705685672892145550, guid: 7c007576c536be34e99b8bbf116232a4, type: 3}
-      propertyPath: m_Name
-      value: Ball
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7c007576c536be34e99b8bbf116232a4, type: 3}
 --- !u!1001 &1414820114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3251,7 +3194,7 @@ MonoBehaviour:
   quitButton: {fileID: 1425567800}
   restartButton: {fileID: 962319920}
   startPos: {x: 4.367, y: 0.687, z: 16.936}
-  multiplier: 0
+  multiplier: 1
 --- !u!4 &1526684436
 Transform:
   m_ObjectHideFlags: 0

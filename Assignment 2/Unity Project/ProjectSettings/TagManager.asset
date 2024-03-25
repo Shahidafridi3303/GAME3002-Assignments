@@ -10,6 +10,7 @@ TagManager:
   - Side
   - Bouncer
   - Flipper
+  - Bouncer2
   layers:
   - Default
   - TransparentFX

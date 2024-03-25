@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField]
     GameObject ball, startButton, highScoreText, scoreText, 
-        quitButton, restartButton, BGImage, Instructions;
+        quitButton, restartButton, BGImage1, BGImage2, Instructions;
 
     int score, highScore;
 
@@ -66,10 +66,11 @@ public class GameManager : MonoBehaviour
 
     public void GameStart()
     {
-        highScoreText.SetActive(false);
+        highScoreText.SetActive(true);
         startButton.SetActive(false);
         Instructions.SetActive(false);
-        BGImage.SetActive(true);
+        BGImage1.SetActive(true);
+        BGImage2.SetActive(true);
         scoreText.SetActive(true);
         Instantiate(ball, startPos, Quaternion.identity);
         //canPlay = true;

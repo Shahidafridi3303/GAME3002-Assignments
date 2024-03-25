@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
-    GameObject ball, startButton, highScoreText, scoreText, quitButton, restartButton;
+    GameObject ball, startButton, highScoreText, scoreText, quitButton, restartButton, BGImage;
 
     int score, highScore;
 
@@ -88,6 +88,7 @@ public class GameManager : MonoBehaviour
     {
         highScoreText.SetActive(false);
         startButton.SetActive(false);
+        BGImage.SetActive(true);
         scoreText.SetActive(true);
         Instantiate(ball, startPos, Quaternion.identity);
         canPlay = true;

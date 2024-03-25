@@ -11,6 +11,10 @@ public class Plunger : MonoBehaviour
     public float maxPower = 100f;
     public Slider powerSlider;
     Rigidbody ballRigidbody;
+
+    [SerializeField]
+    GameObject PlungerBox, PlungerPump;
+
     bool ballReady;
     PhysicMaterial originalMaterial; // Store the original physics material
 
@@ -72,6 +76,9 @@ public class Plunger : MonoBehaviour
                 ballCollider.material = newMaterial; // Set the new material with zero bounciness
             }
             ballReady = true;
+
+            PlungerBox.GetComponent<Renderer>().material.color = Color.yellow;
+            PlungerPump.GetComponent<Renderer>().material.color = Color.yellow;
         }
     }
 
@@ -87,6 +94,9 @@ public class Plunger : MonoBehaviour
             ballRigidbody = null;
             ballReady = false;
             currentPower = minPower;
+
+            PlungerBox.GetComponent<Renderer>().material.color = Color.green;
+            PlungerPump.GetComponent<Renderer>().material.color = Color.green;
         }
     }
 }

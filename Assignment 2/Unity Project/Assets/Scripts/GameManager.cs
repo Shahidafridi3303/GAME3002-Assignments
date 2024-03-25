@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
-    GameObject ball, startButton, highScoreText, scoreText, quitButton, restartButton, BGImage;
+    GameObject ball, startButton, highScoreText, scoreText, 
+        quitButton, restartButton, BGImage, Instructions;
 
     int score, highScore;
 
@@ -18,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     public int multiplier;
 
-    bool canPlay;
+    //bool canPlay;
 
     public static GameManager instance;
 
@@ -38,30 +40,8 @@ public class GameManager : MonoBehaviour
         multiplier = 1;
         highScore = PlayerPrefs.HasKey("HighScore") ? PlayerPrefs.GetInt("HighScore") : 0;
         highScoreText.GetComponent<Text>().text = "HighScore : " + highScore;
-        canPlay = false;
+        //canPlay = false;
     }
-
-    //private void Update()
-    //{
-    //    if (!canPlay) return;
-    //    if (Input.GetKey(KeyCode.A))
-    //    {
-    //        left.AddTorque(25f);
-    //    }
-    //    else
-    //    {
-    //        left.AddTorque(-20f);
-    //    }
-    //    if (Input.GetKey(KeyCode.D))
-    //    {
-    //        right.AddTorque(-25f);
-    //    }
-    //    else
-    //    {
-    //        right.AddTorque(20f);
-    //    }
-
-    //}
 
     public void UpdateScore(int point, int mullIncrease)
     {
@@ -88,10 +68,11 @@ public class GameManager : MonoBehaviour
     {
         highScoreText.SetActive(false);
         startButton.SetActive(false);
+        Instructions.SetActive(false);
         BGImage.SetActive(true);
         scoreText.SetActive(true);
         Instantiate(ball, startPos, Quaternion.identity);
-        canPlay = true;
+        //canPlay = true;
     }
 
     public void GameQuit()

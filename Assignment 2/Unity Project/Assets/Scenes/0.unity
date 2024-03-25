@@ -1796,7 +1796,7 @@ MonoBehaviour:
   m_fPressedPos: 45
   m_fFlipperSpringDamp: 50
   m_flipperInput: 100
-  m_flipCooldown: 0
+  m_flipCooldown: 1
 --- !u!1 &947072598
 GameObject:
   m_ObjectHideFlags: 0
@@ -2160,8 +2160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 556022c29ec13674a9829b3303e2a154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  torqueMagnitude: 500
-  forceMagnitude: 10
+  m_fTorqueMagnitude: 500
+  m_fForceMagnitude: 10
 --- !u!1001 &1168254507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2187,15 +2187,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -9092680394878206478, guid: 179710b285ef9534281f4f21ad7733d4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.22
+      value: 1.19
       objectReference: {fileID: 0}
     - target: {fileID: -9092680394878206478, guid: 179710b285ef9534281f4f21ad7733d4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.16
+      value: 1.12
       objectReference: {fileID: 0}
     - target: {fileID: -9092680394878206478, guid: 179710b285ef9534281f4f21ad7733d4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.31
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -9092680394878206478, guid: 179710b285ef9534281f4f21ad7733d4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2397,7 +2397,7 @@ Transform:
   m_GameObject: {fileID: 1198153653}
   m_LocalRotation: {x: 0.00000008940697, y: 0.0000000013170889, z: 0.0000000013170891, w: 1}
   m_LocalPosition: {x: -0, y: 0.61, z: -0}
-  m_LocalScale: {x: 0.89934886, y: 1.037631, z: 1}
+  m_LocalScale: {x: 1.1717616, y: 1.2564673, z: 1}
   m_Children: []
   m_Father: {fileID: 420203864}
   m_RootOrder: 0
@@ -2414,8 +2414,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84e8a5980628c4b4c82457ed4d225b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 20
-  maxPower: 100
+  m_fStrength: 30
+  m_fMaxPower: 100
   powerSlider: {fileID: 761900470}
   PlungerBox: {fileID: 420203863}
   PlungerPump: {fileID: 364663101}
@@ -2857,7 +2857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6616518908612240050, guid: 03f92e05d85279547aaa9257e42d7a02, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.9389
+      value: 0.63243043
       objectReference: {fileID: 0}
     - target: {fileID: -6616518908612240050, guid: 03f92e05d85279547aaa9257e42d7a02, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2964,15 +2964,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 179710b285ef9534281f4f21ad7733d4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.02
+      value: -2.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 179710b285ef9534281f4f21ad7733d4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.55
+      value: 3.16
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 179710b285ef9534281f4f21ad7733d4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 21.62
+      value: 21.14
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 179710b285ef9534281f4f21ad7733d4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3518,8 +3518,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 556022c29ec13674a9829b3303e2a154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  torqueMagnitude: 500
-  forceMagnitude: 10
+  m_fTorqueMagnitude: 500
+  m_fForceMagnitude: 10
 --- !u!1 &1554568562
 GameObject:
   m_ObjectHideFlags: 0
@@ -3873,7 +3873,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: -0.01, z: 0.1}
   m_Axis: {x: 0, y: 0, z: 2}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -1.6936269, y: 1.0785608, z: 16.639395}
+  m_ConnectedAnchor: {x: -1.6936269, y: 0.9129756, z: 16.74937}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -3924,8 +3924,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0937369, y: 0.3504642, z: 0.25511408}
-  m_Center: {x: -0.3713652, y: 0.0000000783793, z: 0.010624965}
+  m_Size: {x: 1.0937369, y: 0.3504642, z: 0.53640676}
+  m_Center: {x: -0.37136516, y: 0.000000071980814, z: -0.13002281}
 --- !u!64 &1677645718
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3957,7 +3957,7 @@ MonoBehaviour:
   m_fPressedPos: -45
   m_fFlipperSpringDamp: 50
   m_flipperInput: 97
-  m_flipCooldown: 0
+  m_flipCooldown: 1
 --- !u!1 &1678050823
 GameObject:
   m_ObjectHideFlags: 0
@@ -4490,8 +4490,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 556022c29ec13674a9829b3303e2a154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  torqueMagnitude: 500
-  forceMagnitude: 10
+  m_fTorqueMagnitude: 500
+  m_fForceMagnitude: 10
 --- !u!135 &1868672044
 SphereCollider:
   m_ObjectHideFlags: 0

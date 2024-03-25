@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Bumper : MonoBehaviour
 {
-    public float torqueMagnitude = 500f; // Adjust this value to control the torque applied to the ball
-    public float forceMagnitude = 10f;   // Adjust this value to control the force applied to the ball
+    public float m_fTorqueMagnitude = 500f; 
+    public float m_fForceMagnitude = 10f;  
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -15,10 +15,10 @@ public class Bumper : MonoBehaviour
                 Vector3 direction = collision.contacts[0].point - transform.position;
 
                 // Apply torque to the ball
-                ballRigidbody.AddTorque(Vector3.Cross(direction, Vector3.up) * torqueMagnitude, ForceMode.Impulse);
+                ballRigidbody.AddTorque(Vector3.Cross(direction, Vector3.up) * m_fTorqueMagnitude, ForceMode.Impulse);
 
                 // Apply force to the ball in the direction away from the bumper
-                ballRigidbody.AddForce(direction.normalized * forceMagnitude, ForceMode.Impulse);
+                ballRigidbody.AddForce(direction.normalized * m_fForceMagnitude, ForceMode.Impulse);
             }
         }
     }

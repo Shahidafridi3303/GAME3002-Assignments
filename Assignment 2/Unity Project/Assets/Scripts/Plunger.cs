@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class Plunger : MonoBehaviour
 {
-    float currentPower;
-    public float strength = 3f;
-    float minPower = 0f;
-    public float maxPower = 100f;
+    float m_fCurrentPower;
+    public float m_fStrength = 3f;
+    float m_fMinPower = 0f;
+    public float m_fMaxPower = 100f;
     public Slider powerSlider;
     Rigidbody ballRigidbody;
 
@@ -16,13 +16,13 @@ public class Plunger : MonoBehaviour
     GameObject PlungerBox, PlungerPump;
 
     bool ballReady;
-    PhysicMaterial originalMaterial; // Store the original physics material
+    PhysicMaterial originalMaterial; 
 
     // Start is called before the first frame update
     void Start()
     {
-        powerSlider.minValue = minPower;
-        powerSlider.maxValue = maxPower;
+        powerSlider.minValue = m_fMinPower;
+        powerSlider.maxValue = m_fMaxPower;
         powerSlider.gameObject.SetActive(false);
     }
 
@@ -38,27 +38,27 @@ public class Plunger : MonoBehaviour
             powerSlider.gameObject.SetActive(false);
         }
 
-        powerSlider.value = currentPower;
+        powerSlider.value = m_fCurrentPower;
 
         if (ballRigidbody != null && ballReady)
         {
             if (Input.GetKey(KeyCode.Space))
             {
-                if (currentPower <= maxPower)
+                if (m_fCurrentPower <= m_fMaxPower)
                 {
-                    currentPower += 50 * Time.deltaTime;
+                    m_fCurrentPower += 50 * Time.deltaTime;
                 }
             }
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                ballRigidbody.AddForce(currentPower * strength * Vector3.forward);
-                currentPower = minPower;
+                ballRigidbody.AddForce(m_fCurrentPower * m_fStrength * Vector3.forward);
+                m_fCurrentPower = m_fMinPower;
             }
         }
         else
         {
-            currentPower = minPower;
+            m_fCurrentPower = m_fMinPower;
         }
     }
 
@@ -70,10 +70,10 @@ public class Plunger : MonoBehaviour
             Collider ballCollider = other.GetComponent<Collider>();
             if (ballCollider != null)
             {
-                originalMaterial = ballCollider.material; // Store the original material
+                originalMaterial = ballCollider.material; 
                 PhysicMaterial newMaterial = new PhysicMaterial();
                 newMaterial.bounciness = 0f;
-                ballCollider.material = newMaterial; // Set the new material with zero bounciness
+                ballCollider.material = newMaterial; // in order to set ball's bouncy initially zero
             }
             ballReady = true;
 
@@ -89,11 +89,11 @@ public class Plunger : MonoBehaviour
             Collider ballCollider = other.GetComponent<Collider>();
             if (ballCollider != null)
             {
-                ballCollider.material = originalMaterial; // Restore the original material
+                ballCollider.material = originalMaterial; 
             }
             ballRigidbody = null;
             ballReady = false;
-            currentPower = minPower;
+            m_fCurrentPower = m_fMinPower;
 
             PlungerBox.GetComponent<Renderer>().material.color = Color.green;
             PlungerPump.GetComponent<Renderer>().material.color = Color.green;

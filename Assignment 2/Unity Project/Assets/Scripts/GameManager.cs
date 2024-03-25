@@ -12,15 +12,11 @@ public class GameManager : MonoBehaviour
 
     int score, highScore;
 
-    //[SerializeField]
-    //Rigidbody2D left, right;
 
     [SerializeField]
     Vector3 startPos;
 
     public int multiplier;
-
-    //bool canPlay;
 
     public static GameManager instance;
 
@@ -40,7 +36,6 @@ public class GameManager : MonoBehaviour
         multiplier = 1;
         highScore = PlayerPrefs.HasKey("HighScore") ? PlayerPrefs.GetInt("HighScore") : 0;
         highScoreText.GetComponent<Text>().text = "HighScore : " + highScore;
-        //canPlay = false;
     }
 
     public void UpdateScore(int point, int mullIncrease)
@@ -73,7 +68,6 @@ public class GameManager : MonoBehaviour
         BGImage2.SetActive(true);
         scoreText.SetActive(true);
         Instantiate(ball, startPos, Quaternion.identity);
-        //canPlay = true;
     }
 
     public void GameQuit()

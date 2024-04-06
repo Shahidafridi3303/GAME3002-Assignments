@@ -1795,7 +1795,7 @@ MonoBehaviour:
   m_fOriginalPos: 0
   m_fPressedPos: 45
   m_fFlipperSpringDamp: 50
-  m_flipperInput: 100
+  m_flipperInput: 275
   m_flipCooldown: 1
 --- !u!1 &947072598
 GameObject:
@@ -3956,7 +3956,7 @@ MonoBehaviour:
   m_fOriginalPos: 0
   m_fPressedPos: -45
   m_fFlipperSpringDamp: 50
-  m_flipperInput: 97
+  m_flipperInput: 276
   m_flipCooldown: 1
 --- !u!1 &1678050823
 GameObject:

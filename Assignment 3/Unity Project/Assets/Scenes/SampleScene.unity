@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444e6b6992184e941845d50410b075d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 10
 --- !u!95 &106524345
 Animator:
   serializedVersion: 5
@@ -371,7 +371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444e6b6992184e941845d50410b075d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 10
 --- !u!95 &127414025
 Animator:
   serializedVersion: 5
@@ -548,6 +548,14 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 292574491}
     m_ColliderPaths:
+    - - X: 59921876
+        Y: -10000000
+      - X: 50078124
+        Y: -10000000
+      - X: 50078124
+        Y: -50000000
+      - X: 59921876
+        Y: -50000000
     - - X: -80078128
         Y: -30000000
       - X: -89921872
@@ -660,14 +668,6 @@ CompositeCollider2D:
         Y: -50000000
       - X: 49921876
         Y: -50000000
-    - - X: 59921876
-        Y: -30000000
-      - X: 50078124
-        Y: -30000000
-      - X: 50078124
-        Y: -50000000
-      - X: 59921876
-        Y: -50000000
     - - X: 69921872
         Y: -30000000
       - X: 60078124
@@ -702,6 +702,10 @@ CompositeCollider2D:
         Y: -40000000
   m_CompositePaths:
     m_Paths:
+    - - {x: 5.9921584, y: -5}
+      - {x: 5.9921584, y: -1}
+      - {x: 5.0078125, y: -1.0000293}
+      - {x: 5.0078416, y: -5}
     - - {x: 9.992158, y: -4}
       - {x: 9.992158, y: -3}
       - {x: 9.0078125, y: -3.0000293}
@@ -718,10 +722,6 @@ CompositeCollider2D:
       - {x: 6.9921575, y: -3}
       - {x: 6.0078125, y: -3.0000293}
       - {x: 6.0078416, y: -5}
-    - - {x: 5.9921584, y: -5}
-      - {x: 5.9921584, y: -3}
-      - {x: 5.0078125, y: -3.0000293}
-      - {x: 5.0078416, y: -5}
     - - {x: 4.9921584, y: -5}
       - {x: 4.9921584, y: -3}
       - {x: 4.0078125, y: -3.0000293}
@@ -1245,6 +1245,26 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 5, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 2
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 5, y: -2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 2
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 0
@@ -1253,14 +1273,14 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 37
+  - m_RefCount: 39
     m_Data: {fileID: 11400000, guid: 3b0d907c08c102741ad7678f4babf2be, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 37
+  - m_RefCount: 39
     m_Data: {fileID: 1231370989, guid: cc7736b7b9a248a4d931e8f4e39e31af, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -1269,7 +1289,7 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 37
+  - m_RefCount: 39
     m_Data:
       e00: 1
       e01: 0
@@ -1288,7 +1308,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 37
+  - m_RefCount: 39
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 0
     m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
@@ -1487,7 +1507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444e6b6992184e941845d50410b075d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 10
 --- !u!95 &550726214
 Animator:
   serializedVersion: 5
@@ -1656,7 +1676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444e6b6992184e941845d50410b075d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 10
 --- !u!95 &1008913607
 Animator:
   serializedVersion: 5
@@ -9844,7 +9864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444e6b6992184e941845d50410b075d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 10
 --- !u!95 &1420944315
 Animator:
   serializedVersion: 5
@@ -10013,7 +10033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444e6b6992184e941845d50410b075d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 10
 --- !u!95 &1468933206
 Animator:
   serializedVersion: 5
@@ -10182,7 +10202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444e6b6992184e941845d50410b075d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 10
 --- !u!95 &1538641881
 Animator:
   serializedVersion: 5
@@ -10351,7 +10371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444e6b6992184e941845d50410b075d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 10
 --- !u!95 &1542510638
 Animator:
   serializedVersion: 5
@@ -11136,7 +11156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444e6b6992184e941845d50410b075d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 10
 --- !u!95 &1900226859
 Animator:
   serializedVersion: 5
@@ -11393,7 +11413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444e6b6992184e941845d50410b075d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 10
 --- !u!95 &2066021055
 Animator:
   serializedVersion: 5

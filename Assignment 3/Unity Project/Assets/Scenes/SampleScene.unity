@@ -28967,8 +28967,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseSpeed: 7.4
   JumpForce: 10
-  distance: 47.87
-  speed2: 15
 --- !u!50 &1563755778
 Rigidbody2D:
   serializedVersion: 4

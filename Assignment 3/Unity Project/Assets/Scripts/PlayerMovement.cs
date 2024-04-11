@@ -3,13 +3,17 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float speed = 7.4f;
+    [SerializeField] private float baseSpeed = 7.4f;
+    private float currentSpeed; 
+    private float speedMultiplier = 1f;
+
     [SerializeField] private float JumpForce = 10f;
     private Rigidbody2D body;
     private Animator anim;
     private bool grounded;
     private float horizontalInput;
 
+    // For player Dash
     [SerializeField] private float distance = 7.4f;
     [SerializeField] private float speed2 = 15.0f;
 
@@ -21,12 +25,13 @@ public class PlayerMovement : MonoBehaviour
         //Grabs references for rigidbody and animator from game object.
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        currentSpeed = baseSpeed;
     }
 
     private void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-        body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
+        body.velocity = new Vector2(horizontalInput * currentSpeed, body.velocity.y);
 
         //Flip player when facing left/right.
         if (horizontalInput > 0.01f)
@@ -102,6 +107,37 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
             grounded = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        print("HMM");
+        if (other.CompareTag("SpeedUpZone") || other.CompareTag("SlowDownZone"))
+        {
+            ApplySpeedMultiplier(other.CompareTag("SpeedUpZone") ? 2f : 0.5f); // Ternary operator to determine speed multiplier
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("SpeedUpZone") || other.CompareTag("SlowDownZone"))
+        {
+            ResetSpeedMultiplier(); // Reset speed multiplier when leaving the zones
+        }
+    }
+
+    // Method to apply or reset speed multiplier
+    private void ApplySpeedMultiplier(float multiplier)
+    {
+        speedMultiplier = multiplier;
+        currentSpeed = baseSpeed * speedMultiplier;
+    }
+
+    // Method to reset speed multiplier
+    private void ResetSpeedMultiplier()
+    {
+        speedMultiplier = 1f;
+        currentSpeed = baseSpeed;
     }
 }
 

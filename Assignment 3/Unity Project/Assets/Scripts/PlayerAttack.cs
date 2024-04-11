@@ -8,18 +8,16 @@ public class PlayerAttack : MonoBehaviour
     //[SerializeField] private AudioClip fireballSound;
 
     private Animator anim;
-    private PlayerMovement playerMovement;
     private float cooldownTimer = Mathf.Infinity;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        playerMovement = GetComponent<PlayerMovement>();
     }
 
     private void Update()
     {
-        if (Input.GetMouseButton(0) && cooldownTimer > attackCooldown && playerMovement.canAttack()
+        if (Input.GetMouseButton(0) && cooldownTimer > attackCooldown
             && Time.timeScale > 0)
             Attack();
 

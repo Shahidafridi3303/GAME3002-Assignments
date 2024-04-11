@@ -28904,10 +28904,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7.49
-  jumpForce: 10
-  strikeCooldown: 1
+  JumpForce: 10
   distance: 47.87
-  strikeSpeed: 15
+  speed2: 15
 --- !u!50 &1563755778
 Rigidbody2D:
   serializedVersion: 4

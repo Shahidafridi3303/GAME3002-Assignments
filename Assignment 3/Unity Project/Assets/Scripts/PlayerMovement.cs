@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private bool grounded;
     private float horizontalInput;
 
+    private int jumpRemaining = 2;
+
     // Define boundaries for strike move
     private float minX = -10f; // Adjust according to your game's layout
     private float maxX = 10f;  // Adjust according to your game's layout
@@ -35,11 +37,12 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
         }
 
-        if (Input.GetKey(KeyCode.Space) && grounded)
+        if (Input.GetKey(KeyCode.Space) && (jumpRemaining > 0))
         {
             body.velocity = new Vector2(body.velocity.x, JumpForce);
             anim.SetTrigger("jump");
             grounded = false;
+            jumpRemaining -= 1;
         }
 
         if (Input.GetKey(KeyCode.M))
@@ -78,5 +81,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
             grounded = true;
+        jumpRemaining = 2;
     }
 }

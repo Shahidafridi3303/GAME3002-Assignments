@@ -17,6 +17,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float distance = 7.4f;
     [SerializeField] private float speed2 = 15.0f;
 
+    private bool Temp = true;
+
+
     //[SerializeField] private float strikeCooldown = 1f; // Cooldown time for strike in seconds
     //private bool canStrike = true;
 
@@ -48,11 +51,14 @@ public class PlayerMovement : MonoBehaviour
             body.velocity = new Vector2(body.velocity.x, JumpForce);
             anim.SetTrigger("jump");
             grounded = false;
+            //Strike();
+            //temp = temp - 1;
         }
 
-        if (Input.GetKey(KeyCode.M))
+        if (Input.GetKey(KeyCode.M) && Temp == true)
         {
-            Strike();
+            Strike(); 
+            //Temp = false;
             //StartCoroutine(StrikeWithCooldown());
         }
 

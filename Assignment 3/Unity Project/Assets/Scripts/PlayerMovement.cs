@@ -6,20 +6,24 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float baseSpeed = 7.4f;
     private float currentSpeed; 
+    [SerializeField] private float baseJumpForce = 10f;
+    private float currentJumpForce;
 
-    [SerializeField] private float JumpForce = 10f;
     private Rigidbody2D body;
     private Animator anim;
     private bool grounded;
     private float horizontalInput;
-
     private bool canDoubleJump;
+
+    // For teleport
+    public Transform teleportTarget;
 
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         currentSpeed = baseSpeed;
+        currentJumpForce = baseJumpForce;
     }
 
     private void Update()
@@ -42,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
             if (grounded)
             {
                 canDoubleJump = true;
-                body.velocity = new Vector2(body.velocity.x, JumpForce);
+                body.velocity = new Vector2(body.velocity.x, currentJumpForce);
                 anim.SetTrigger("jump");
                 grounded = false;
             }
@@ -50,12 +54,17 @@ public class PlayerMovement : MonoBehaviour
             else if (canDoubleJump)
             {
                 canDoubleJump = false;
-                body.velocity = new Vector2(body.velocity.x, JumpForce);
+                body.velocity = new Vector2(body.velocity.x, currentJumpForce);
             }
         }
 
-        //setting animation parameters
-        anim.SetBool("run", horizontalInput != 0);
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            transform.position = teleportTarget.position;
+        }
+
+            //setting animation parameters
+            anim.SetBool("run", horizontalInput != 0);
         anim.SetBool("grounded", grounded);
     }
 
@@ -72,10 +81,12 @@ public class PlayerMovement : MonoBehaviour
             if (other.CompareTag("SpeedUpZone"))
             {
                 currentSpeed = baseSpeed * 2.0f;
+                currentJumpForce = baseJumpForce * 1.5f;
             }
             else
             {
                 currentSpeed = baseSpeed * 0.5f;
+                currentJumpForce = baseJumpForce;
             }
         }
     }
@@ -85,6 +96,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("SpeedUpZone") || other.CompareTag("SlowDownZone"))
         {
             currentSpeed = baseSpeed;
+            currentJumpForce = baseJumpForce;
         }
     }
 }

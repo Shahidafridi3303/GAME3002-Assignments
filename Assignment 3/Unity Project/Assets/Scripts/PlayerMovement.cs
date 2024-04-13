@@ -16,7 +16,8 @@ public class PlayerMovement : MonoBehaviour
     private bool canDoubleJump;
 
     // For teleport
-    public Transform teleportTarget;
+    public Transform teleportTarget1;
+    public Transform teleportTarget2;
 
     private void Awake()
     {
@@ -60,11 +61,15 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            transform.position = teleportTarget.position;
+            transform.position = teleportTarget1.position;
         }
 
-            //setting animation parameters
-            anim.SetBool("run", horizontalInput != 0);
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            transform.position = teleportTarget2.position;
+        }
+        //setting animation parameters
+        anim.SetBool("run", horizontalInput != 0);
         anim.SetBool("grounded", grounded);
     }
 

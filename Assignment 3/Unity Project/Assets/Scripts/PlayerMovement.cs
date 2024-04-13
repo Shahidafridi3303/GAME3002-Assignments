@@ -75,8 +75,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
-            grounded = true;
+        string tag = collision.gameObject.tag;
+        switch (tag)
+        {
+            case "Ground":
+                grounded = true;
+                break;
+
+            case "key":
+                GameManager.instance.UpdateKeyScore();
+                break;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)

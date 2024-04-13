@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField]
     GameObject startButton, keyText,
-    quitButton, restartButton, BGImage1, Instructions;
+    quitButton, restartButton, BGImage, Instructions;
 
     public static GameManager instance;
     int key = 0;
@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        Instructions.SetActive(true);
     }
 
     public void UpdateKeyScore()
@@ -41,7 +43,7 @@ public class GameManager : MonoBehaviour
     {
         startButton.SetActive(false);
         Instructions.SetActive(false);
-        BGImage1.SetActive(true);
+        BGImage.SetActive(false);
         keyText.SetActive(true);
     }
 
@@ -55,6 +57,6 @@ public class GameManager : MonoBehaviour
 
     public void GameRestart()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 }

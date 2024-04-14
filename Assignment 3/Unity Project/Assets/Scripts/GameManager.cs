@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class GameManager : MonoBehaviour
     // Other UI elements
     [SerializeField]
     GameObject startButton,
-    quitButton, restartButton, BGImage, Instructions;
+    restartLevel, restartGame, quitButton, BGImage, Instructions;
     
     public static GameManager instance;
 
@@ -32,6 +33,11 @@ public class GameManager : MonoBehaviour
         Instructions.SetActive(true);
     }
 
+    private void Start()
+    {
+        Time.timeScale = 0;
+    }
+
     void Update()
     {
         if (startTimer)
@@ -40,18 +46,36 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void GameEnd()
-    {
-        quitButton.SetActive(true);
-        restartButton.SetActive(true);
-    }
-
     public void GameStart()
     {
         startTimer = true;
         startButton.SetActive(false);
         Instructions.SetActive(false);
         BGImage.SetActive(false);
+
+        Time.timeScale = 1;
+    }
+
+    public void RestartLevel()
+    {
+        print("Hello");
+        restartLevel.SetActive(false);
+        restartGame.SetActive(false);
+        quitButton.SetActive(false);
+        
+        // Get the current scene index
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        // Load the next scene
+        SceneManager.LoadScene(currentSceneIndex);
+    }
+
+    public void RestartGame()
+    {
+        restartLevel.SetActive(false);
+        restartGame.SetActive(false);
+        quitButton.SetActive(false);
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 
     public void GameQuit()
@@ -62,11 +86,6 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void GameRestart()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
-    }
-
     // Timer
     void StartCountdownTimer()
     {
@@ -75,13 +94,14 @@ public class GameManager : MonoBehaviour
             remainingTime -= Time.deltaTime;
         }
 
-        else if (remainingTime < 0)
+        else if (remainingTime <= 0)
         {
             remainingTime = 0;
             timerText.color = Color.red;
 
-            Time.timeScale = 0;
-            GameEnd();
+            restartLevel.SetActive(true);
+            restartGame.SetActive(true);
+            quitButton.SetActive(true);
         }
 
         int minutes = Mathf.FloorToInt(remainingTime / 60);

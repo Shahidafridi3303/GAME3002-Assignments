@@ -10,6 +10,7 @@ TagManager:
   - key
   - Door
   - Flag
+  - restartFlag
   layers:
   - Default
   - TransparentFX

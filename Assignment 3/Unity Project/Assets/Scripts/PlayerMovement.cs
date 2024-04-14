@@ -109,6 +109,10 @@ public class PlayerMovement : MonoBehaviour
             case "Flag":
                 LoadNextLevel();
                 break;
+
+            case "restartFlag":
+                LoadNextLevel();
+                break;
         }
     }
 

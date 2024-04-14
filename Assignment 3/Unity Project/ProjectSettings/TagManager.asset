@@ -7,6 +7,9 @@ TagManager:
   - Ground
   - SpeedUpZone
   - SlowDownZone
+  - key
+  - Door
+  - Flag
   layers:
   - Default
   - TransparentFX

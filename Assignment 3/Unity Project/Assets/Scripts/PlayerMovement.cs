@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class PlayerMovement : MonoBehaviour
     private bool grounded;
     private float horizontalInput;
     private bool canDoubleJump;
+
+    [SerializeField]
+    GameObject KeyCollectedText;
+
+    private bool IsKeyCollected = false;
 
     // For teleport
     public Transform teleportTarget1;
@@ -68,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position = teleportTarget2.position;
         }
+
         //setting animation parameters
         anim.SetBool("run", horizontalInput != 0);
         anim.SetBool("grounded", grounded);
@@ -83,7 +90,24 @@ public class PlayerMovement : MonoBehaviour
                 break;
 
             case "key":
-                GameManager.instance.UpdateKeyScore();
+                Destroy(collision.gameObject);
+                IsKeyCollected = true;
+                KeyCollectedText.SetActive(false);
+                break;
+
+            case "Door":
+                if (IsKeyCollected == true)
+                {
+                    Destroy(collision.gameObject);
+                }
+                else
+                {
+                    KeyCollectedText.SetActive(true);
+                }
+                break;
+
+            case "Flag":
+                LoadNextLevel();
                 break;
         }
     }
@@ -113,5 +137,15 @@ public class PlayerMovement : MonoBehaviour
             currentJumpForce = baseJumpForce;
         }
     }
+
+    public void LoadNextLevel()
+    {
+        // Get the current scene index
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        // Load the next scene
+        SceneManager.LoadScene(currentSceneIndex + 1);
+    }
+
 }
 

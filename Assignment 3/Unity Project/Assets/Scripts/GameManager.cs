@@ -13,11 +13,10 @@ public class GameManager : MonoBehaviour
 
     // Other UI elements
     [SerializeField]
-    GameObject startButton, keyText,
+    GameObject startButton,
     quitButton, restartButton, BGImage, Instructions;
     
     public static GameManager instance;
-    int key = 0;
 
     private void Awake()
     {
@@ -41,12 +40,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void UpdateKeyScore()
-    {
-        key += 1;
-        keyText.GetComponent<Text>().text = "Key : " + key + "/2";
-    }
-
     public void GameEnd()
     {
         quitButton.SetActive(true);
@@ -59,7 +52,6 @@ public class GameManager : MonoBehaviour
         startButton.SetActive(false);
         Instructions.SetActive(false);
         BGImage.SetActive(false);
-        keyText.SetActive(true);
     }
 
     public void GameQuit()
@@ -72,7 +64,7 @@ public class GameManager : MonoBehaviour
 
     public void GameRestart()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 
     // Timer

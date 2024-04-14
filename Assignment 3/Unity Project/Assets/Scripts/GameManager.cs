@@ -62,7 +62,9 @@ public class GameManager : MonoBehaviour
         restartLevel.SetActive(false);
         restartGame.SetActive(false);
         quitButton.SetActive(false);
-        
+
+        Time.timeScale = 1;
+
         // Get the current scene index
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         // Load the next scene
@@ -74,6 +76,8 @@ public class GameManager : MonoBehaviour
         restartLevel.SetActive(false);
         restartGame.SetActive(false);
         quitButton.SetActive(false);
+
+        Time.timeScale = 1;
 
         UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
@@ -102,6 +106,8 @@ public class GameManager : MonoBehaviour
             restartLevel.SetActive(true);
             restartGame.SetActive(true);
             quitButton.SetActive(true);
+
+            Time.timeScale = 0;
         }
 
         int minutes = Mathf.FloorToInt(remainingTime / 60);

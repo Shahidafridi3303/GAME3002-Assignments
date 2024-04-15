@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     // Other UI elements
     [SerializeField]
-    GameObject startButton,
+    GameObject pauseButton, resumeButton, startButton,
     restartLevel, restartGame, quitButton, BGImage, Instructions;
     
     public static GameManager instance;
@@ -46,9 +46,31 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Pausegame()
+    {
+        pauseButton.SetActive(false);
+        resumeButton.SetActive(true);
+        restartLevel.SetActive(true);
+        restartGame.SetActive(true);
+        quitButton.SetActive(true);
+
+        Time.timeScale = 0;
+    }
+    public void Resumegame()
+    {
+        pauseButton.SetActive(true);
+        resumeButton.SetActive(false);
+        restartLevel.SetActive(false);
+        restartGame.SetActive(false);
+        quitButton.SetActive(false);
+
+        Time.timeScale = 1;
+    }
+
     public void GameStart()
     {
         startTimer = true;
+        pauseButton.SetActive(true);
         startButton.SetActive(false);
         Instructions.SetActive(false);
         BGImage.SetActive(false);
@@ -106,6 +128,7 @@ public class GameManager : MonoBehaviour
             restartLevel.SetActive(true);
             restartGame.SetActive(true);
             quitButton.SetActive(true);
+            pauseButton.SetActive(false);
 
             Time.timeScale = 0;
         }

@@ -21,12 +21,15 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsKeyCollected = false;
 
+    private GameManager gameManager;
+
     // For teleport
     public Transform teleportTarget1;
     public Transform teleportTarget2;
 
     private void Awake()
     {
+        gameManager = GameManager.instance;
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         currentSpeed = baseSpeed;
@@ -104,6 +107,11 @@ public class PlayerMovement : MonoBehaviour
                 {
                     KeyCollectedText.SetActive(true);
                 }
+                break;
+
+            case "Spikes":
+                gameManager.GameOver();
+                Destroy(gameObject);
                 break;
 
             case "Flag":

@@ -11,6 +11,7 @@ TagManager:
   - Door
   - Flag
   - restartFlag
+  - Spikes
   layers:
   - Default
   - TransparentFX

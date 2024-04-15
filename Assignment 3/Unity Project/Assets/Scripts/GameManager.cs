@@ -112,6 +112,16 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void GameOver()
+    {
+        pauseButton.SetActive(false);
+        restartLevel.SetActive(true);
+        restartGame.SetActive(true);
+        quitButton.SetActive(true);
+
+        Time.timeScale = 1;
+    }
+
     // Timer
     void StartCountdownTimer()
     {
@@ -125,10 +135,7 @@ public class GameManager : MonoBehaviour
             remainingTime = 0;
             timerText.color = Color.red;
 
-            restartLevel.SetActive(true);
-            restartGame.SetActive(true);
-            quitButton.SetActive(true);
-            pauseButton.SetActive(false);
+            GameOver();
 
             Time.timeScale = 0;
         }

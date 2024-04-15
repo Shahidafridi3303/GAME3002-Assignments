@@ -12,6 +12,7 @@ TagManager:
   - Flag
   - restartFlag
   - Spikes
+  - Time
   layers:
   - Default
   - TransparentFX

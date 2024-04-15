@@ -108,6 +108,11 @@ public class PlayerMovement : MonoBehaviour
                 KeyCollectedText.SetActive(false);
                 break;
 
+            case "Time":
+                gameManager.remainingTime += 10f; // Increase remainingTime by 10
+                Destroy(collision.gameObject);
+                break;
+
             case "Door":
                 if (IsKeyCollected == true)
                 {
@@ -123,7 +128,6 @@ public class PlayerMovement : MonoBehaviour
                 Time.timeScale = 0;
                 gameManager.GameOver();
                 Destroy(gameObject);
-                
                 break;
 
             case "Flag":

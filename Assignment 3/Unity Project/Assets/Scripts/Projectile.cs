@@ -10,8 +10,11 @@ public class Projectile : MonoBehaviour
     private Animator anim;
     private BoxCollider2D boxCollider;
 
+    private GameManager gameManager;
+
     private void Awake()
     {
+        gameManager = GameManager.instance;
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
     }
@@ -32,6 +35,10 @@ public class Projectile : MonoBehaviour
         anim.SetTrigger("explode");
 
         if (collision.tag == "Spikes")
+            Destroy(collision.gameObject);
+
+        if (collision.tag == "Time")
+            gameManager.remainingTime += 10f;
             Destroy(collision.gameObject);
     }
     public void SetDirection(float _direction)

@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 {
     // Timer
     [SerializeField] TextMeshProUGUI timerText;
-    [SerializeField] float remainingTime;
+    public float remainingTime;
     private bool startTimer = false;
 
     // Other UI elements
@@ -119,7 +119,7 @@ public class GameManager : MonoBehaviour
         restartGame.SetActive(true);
         quitButton.SetActive(true);
 
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
     }
 
     // Timer

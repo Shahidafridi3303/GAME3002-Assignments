@@ -34,13 +34,18 @@ public class Projectile : MonoBehaviour
         boxCollider.enabled = false;
         anim.SetTrigger("explode");
 
-        if (collision.tag == "Spikes")
+        if (collision.gameObject.tag == "Spikes" || collision.gameObject.tag == "Time")
+        {
             Destroy(collision.gameObject);
 
-        if (collision.tag == "Time")
-            gameManager.remainingTime += 10f;
-            Destroy(collision.gameObject);
+            if (collision.gameObject.tag == "Time")
+            {
+                gameManager.remainingTime += 10f;
+            }
+        }
     }
+
+
     public void SetDirection(float _direction)
     {
         lifetime = 0;

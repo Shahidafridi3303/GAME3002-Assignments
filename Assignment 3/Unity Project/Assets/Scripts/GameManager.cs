@@ -135,9 +135,8 @@ public class GameManager : MonoBehaviour
             remainingTime = 0;
             timerText.color = Color.red;
 
-            GameOver();
-
             Time.timeScale = 0;
+            GameOver();
         }
 
         int minutes = Mathf.FloorToInt(remainingTime / 60);

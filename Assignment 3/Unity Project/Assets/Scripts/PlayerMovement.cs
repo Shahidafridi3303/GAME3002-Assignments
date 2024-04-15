@@ -24,8 +24,8 @@ public class PlayerMovement : MonoBehaviour
     private GameManager gameManager;
 
     // For teleport
-    public Transform teleportTarget1;
-    public Transform teleportTarget2;
+    [SerializeField]
+    Transform teleportTarget1, teleportTarget2, teleportTarget3, teleportTarget4;
 
     private void Awake()
     {
@@ -78,6 +78,16 @@ public class PlayerMovement : MonoBehaviour
             transform.position = teleportTarget2.position;
         }
 
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            transform.position = teleportTarget3.position;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            transform.position = teleportTarget4.position;
+        }
+
         //setting animation parameters
         anim.SetBool("run", horizontalInput != 0);
         anim.SetBool("grounded", grounded);
@@ -110,8 +120,10 @@ public class PlayerMovement : MonoBehaviour
                 break;
 
             case "Spikes":
+                Time.timeScale = 0;
                 gameManager.GameOver();
                 Destroy(gameObject);
+                
                 break;
 
             case "Flag":
@@ -152,10 +164,10 @@ public class PlayerMovement : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        // Get the current scene index
+        // Getting the current scene index
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-        // Load the next scene
+        // Loading the next build level
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
 

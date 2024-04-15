@@ -88,6 +88,11 @@ public class PlayerMovement : MonoBehaviour
             transform.position = teleportTarget4.position;
         }
 
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            gameManager.remainingTime += 10f;
+        }
+
         //setting animation parameters
         anim.SetBool("run", horizontalInput != 0);
         anim.SetBool("grounded", grounded);
